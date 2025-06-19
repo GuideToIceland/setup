@@ -26,7 +26,23 @@ Before running this script, ensure you have the following command-line tools ins
 
 There are two primary ways to use this script: running it from a local file or executing it directly from a remote URL.
 
-### 1. Local Execution
+### 1. Remote Execution via `curl`
+
+You can run this script directly from its raw GitHub URL without downloading it first. This is a convenient way to share and run the setup process.
+
+1.  **Get the Raw URL**: Navigate to the script file in the GitHub repository and click the **"Raw"** button to get the direct link to the file.
+
+2.  **Run the Command**:
+    - To run the script and clone the default repository (`monorepo`):
+      ```bash
+      curl -sS https://raw.githubusercontent.com/GuideToIceland/setup/main/setup.sh | bash
+      ```
+    - To pass an argument and clone a specific repository (e.g., `guide`):
+      ```bash
+      curl -sS https://raw.githubusercontent.com/GuideToIceland/setup/main/setup.sh | bash -s guide
+      ```
+
+### 2. Local Execution
 
 1.  **Save the Script**: Save the script content into a file named `setup.sh`.
 
@@ -43,22 +59,6 @@ There are two primary ways to use this script: running it from a local file or e
     - To clone a different repository (e.g., `guide`):
       ```bash
       ./setup.sh guide
-      ```
-
-### 2. Remote Execution via `curl`
-
-You can run this script directly from its raw GitHub URL without downloading it first. This is a convenient way to share and run the setup process.
-
-1.  **Get the Raw URL**: Navigate to the script file in the GitHub repository and click the **"Raw"** button to get the direct link to the file.
-
-2.  **Run the Command**:
-    - To run the script and clone the default repository (`monorepo`):
-      ```bash
-      curl -sS [https://raw.githubusercontent.com/GuideToIceland/setup/main/setup.sh](https://raw.githubusercontent.com/GuideToIceland/setup/main/setup.sh) | bash
-      ```
-    - To pass an argument and clone a specific repository (e.g., `guide`):
-      ```bash
-      curl -sS [https://raw.githubusercontent.com/GuideToIceland/setup/main/setup.sh](https://raw.githubusercontent.com/GuideToIceland/setup/main/setup.sh) | bash -s guide
       ```
 
 ## How It Works
