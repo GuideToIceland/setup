@@ -38,7 +38,8 @@ echo "This script will help you set up an SSH key and clone the '${REPO_NAME}' r
 
 # 1. Get user's email for the SSH key
 # The email is required for the `ssh-keygen` command.
-read -p "Please enter the email address associated with your GitHub account: " USER_EMAIL
+# We must redirect input from /dev/tty to ensure this works when piping from curl.
+read -p "Please enter the email address associated with your GitHub account: " USER_EMAIL < /dev/tty
 
 if [ -z "$USER_EMAIL" ]; then
     echo "Email cannot be empty. Aborting script."
@@ -93,7 +94,8 @@ echo "5. Paste the key you copied into the 'Key' text box and click 'Add SSH key
 echo ""
 
 # Pause the script and wait for the user to complete the manual step.
-read -p "Once you have added the key to GitHub, press [Enter] to continue..."
+# We must also redirect this read command from /dev/tty.
+read -p "Once you have added the key to GitHub, press [Enter] to continue..." < /dev/tty
 
 # 4. Clone the repository
 print_header "Step 3: Cloning the Repository"
