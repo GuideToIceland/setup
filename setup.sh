@@ -103,7 +103,7 @@ run_setup() {
     # 5. Install Developer Tools (Taskfile)
     print_header "Step 4: Installing Developer Tools"
     echo "Installing Taskfile..."
-    sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
+    sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/go/bin
     echo "Taskfile installation command executed."
 
     # 6. Set up Go Environment and Tools
